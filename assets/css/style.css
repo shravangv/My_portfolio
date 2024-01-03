@@ -457,8 +457,7 @@ section .container {
 
 .counts .count-box i {
   position: absolute;
-  top: -25px;
-  left: 50%;
+  top: 25px;
   transform: translateX(-50%);
   font-size: 24px;
   background: rgba(255, 255, 255, 0.1);
@@ -466,6 +465,7 @@ section .container {
   color: #18d26e;
   border-radius: 50px;
   line-height: 0;
+  left: 80px;
 }
 
 .counts .count-box span {
@@ -542,10 +542,6 @@ section .container {
   line-height: 1;
   font-size: 16px;
   color: #fff;
-}
-
-.interests .icon-box:hover {
-  background: rgba(255, 255, 255, 0.12);
 }
 
 /*--------------------------------------------------------------
@@ -775,6 +771,8 @@ section .container {
 --------------------------------------------------------------*/
 .portfolio .portfolio-item {
   margin-bottom: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .portfolio #portfolio-flters {
@@ -879,6 +877,7 @@ section .container {
   font-size: 20px;
   color: #fff;
   font-weight: 600;
+  padding: 75px;
 }
 
 .portfolio .portfolio-wrap .portfolio-info p {
@@ -1188,3 +1187,62 @@ section .container {
 .credits a:hover {
   color: #fff;
 }
+
+.body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+.tile-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+.tile {
+      width: 200px;
+      margin: 10px;
+      background-color: #3498db;
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+      overflow: hidden;
+      position: relative;
+    }
+
+.tile-heading {
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+.arrow {
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid #fff;
+      margin-right: 10px;
+    }
+
+.tile-content {
+      padding: 10px;
+      transform-origin: top;
+      transform: scaleY(0);
+      transition: transform 0.3s ease-in-out;
+    }
+
+.tile.expanded .tile-content {
+      transform: scaleY(1);
+    }
+
+.tile.expanded {
+      transform: scaleY(1.1);
+    }
+
